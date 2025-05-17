@@ -1,0 +1,473 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fitnation - Unleash Your Inner Athlete</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#a3e635', // lime-400
+              secondary: '#1a1a1a',
+            },
+            animation: {
+              'float': 'float 3s ease-in-out infinite',
+              'pulse-slow': 'pulse 6s infinite',
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body class="bg-black text-white font-sans overflow-x-hidden">
+    <!-- Navigation -->
+    <header class="fixed w-full z-50 bg-black bg-opacity-90 transition-all duration-300">
+      <div class="container mx-auto flex justify-between items-center p-6">
+        <div class="flex items-center space-x-2">
+          <div class="h-10 w-10 rounded-full bg-primary flex items-center justify-center">
+            <span class="font-bold text-black">F</span>
+          </div>
+          <div class="text-white font-bold text-xl">FITNATION</div>
+        </div>
+        <nav class="hidden md:flex space-x-8">
+          <a href="#home" class="text-white hover:text-primary transition">Home</a>
+          <a href="#services" class="text-white hover:text-primary transition">Services</a>
+          <a href="#facility" class="text-white hover:text-primary transition">Facility</a>
+          <a href="#testimonials" class="text-white hover:text-primary transition">Testimonials</a>
+          <a href="#contact" class="text-white hover:text-primary transition">Contact</a>
+        </nav>
+        <div class="flex items-center space-x-4">
+          <a href="pages/login_register/login-register.html" class="bg-primary text-black px-6 py-2 rounded-full font-bold text-sm hover:bg-white transition">
+            Login
+          </a>
+          <a href="pages/login_register/login-register.html" class="bg-primary text-black px-6 py-2 rounded-full font-bold text-sm hover:bg-white transition">
+            Register
+          </a>
+          <button class="md:hidden text-white focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center relative overflow-hidden pt-20">
+      <!-- Background Image with Parallax Effect -->
+      <div class="absolute inset-0 z-0">
+        <img src="assets/img/bg-1.svg" 
+            class="w-full h-full object-cover object-center parallax-bg"
+            style="transform: translate3d(0,0,0); backface-visibility: hidden;">
+        <div class="absolute"></div>
+      </div>
+      
+      <div class="container mx-auto px-6 z-10 py-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div>
+            <!-- Main heading slides in from left -->
+            <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6 transform transition duration-1000 animate-slide-in-left">
+              YOUR SPORT <span class="gradient-text animate-text">NETWORK STARTS HERE</span>
+            </h1>
+            
+            <!-- Paragraph slides in from right -->
+            <p class="text-gray-300 text-lg mb-8 max-w-lg transform transition duration-1000 delay-200 animate-slide-in-right">
+              A sport platform that connects you with coaches, athletes, training grounds, and sport health professionals. Create your profile, build a network, and achieve your best potential.
+            </p>
+            
+            <!-- Buttons slide up from bottom -->
+            <div class="flex flex-wrap gap-4 transform transition duration-1000 delay-300 animate-slide-in-bottom">
+              <a href="#contact" class="bg-primary text-black px-8 py-4 rounded-full font-bold hover:bg-white transition transform hover:-translate-y-1 hover:shadow-xl">
+                JOIN NOW
+              </a>
+              <a href="#" class="border-2 border-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-black transition transform hover:-translate-y-1 hover:shadow-xl">
+                LOGIN 
+              </a>
+            </div>
+            
+            <!-- Member section slides up from bottom with delay -->
+            <div class="mt-8 flex items-center space-x-4 transform transition duration-1000 delay-500 animate-slide-in-bottom">
+              <div class="flex -space-x-2 hover:space-x-2 transition-all duration-300">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-10 h-10 rounded-full border-2 border-primary transition-all duration-300 hover:transform hover:scale-110">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-10 h-10 rounded-full border-2 border-primary transition-all duration-300 hover:transform hover:scale-110">
+                <img src="https://randomuser.me/api/portraits/women/68.jpg" class="w-10 h-10 rounded-full border-2 border-primary transition-all duration-300 hover:transform hover:scale-110">
+              </div>
+              <div class="transform transition hover:scale-105 duration-300">
+                <div class="font-bold text-xl count-up" data-count="1">0+</div>
+                <div class="text-gray-400">Members</div>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <!-- Empty right column maintained for layout -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Scrolling Indicator -->
+      <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+        <a href="#services" class="text-white hover:text-primary transition">
+          <i class="fas fa-chevron-down text-2xl"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <!-- <section class="bg-secondary py-16">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div class="animate__animated animate__fadeInUp">
+            <div class="text-4xl font-bold text-primary mb-2">10+</div>
+            <div class="text-gray-400">Years Experience</div>
+          </div>
+          <div class="animate__animated animate__fadeInUp animate__delay-1s">
+            <div class="text-4xl font-bold text-primary mb-2">50+</div>
+            <div class="text-gray-400">Expert Trainers</div>
+          </div>
+          <div class="animate__animated animate__fadeInUp animate__delay-2s">
+            <div class="text-4xl font-bold text-primary mb-2">500+</div>
+            <div class="text-gray-400">Happy Members</div>
+          </div>
+          <div class="animate__animated animate__fadeInUp animate__delay-3s">
+            <div class="text-4xl font-bold text-primary mb-2">24/7</div>
+            <div class="text-gray-400">Open Facility</div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-black overflow-hidden">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4 transform transition duration-700 hover:scale-105">
+            OUR <span class="gradient-text animate-gradient">POWERFUL TOOLS</span>
+          </h2>
+          <p class="text-gray-400 max-w-2xl mx-auto text-lg">
+            Elevate your athletic journey with our comprehensive sports ecosystem
+          </p>
+        </div>
+        
+        <!-- First Row (Left to Right Animation) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+          <!-- Service 1 -->
+          <div class="bg-gradient-to-br from-gray-900 to-secondary p-8 rounded-xl hover:shadow-primary/20 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 service-row-1">
+            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6 mx-auto">
+              <i class="fas fa-user-tie text-2xl text-black"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-center">Athlete-Coach Network</h3>
+            <p class="text-gray-400 mb-6 text-center">
+              Connect with elite trainers and athletes worldwide to enhance your training regimen
+            </p>
+            <div class="flex justify-center">
+              <a href="#" class="text-primary font-bold flex items-center group">
+                Explore <i class="fas fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
+              </a>
+            </div>
+            <div class="absolute inset-0 border-2 border-primary/10 rounded-xl pointer-events-none"></div>
+          </div>
+          
+          <!-- Service 2 -->
+          <div class="bg-gradient-to-br from-gray-900 to-secondary p-8 rounded-xl hover:shadow-primary/20 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 service-row-1 delay-100">
+            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6 mx-auto">
+              <i class="fas fa-calendar-check text-2xl text-black"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-center">Facility Booking</h3>
+            <p class="text-gray-400 mb-6 text-center">
+              Reserve premium training venues with real-time availability and instant confirmation
+            </p>
+            <div class="flex justify-center">
+              <a href="#" class="text-primary font-bold flex items-center group">
+                Book Now <i class="fas fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
+              </a>
+            </div>
+            <div class="absolute inset-0 border-2 border-primary/10 rounded-xl pointer-events-none"></div>
+          </div>
+          
+          <!-- Service 3 -->
+          <div class="bg-gradient-to-br from-gray-900 to-secondary p-8 rounded-xl hover:shadow-primary/20 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 service-row-1 delay-200">
+            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6 mx-auto">
+              <i class="fas fa-chart-line text-2xl text-black"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-center">Performance Dashboard</h3>
+            <p class="text-gray-400 mb-6 text-center">
+              Track your progress with advanced analytics and AI-powered performance insights
+            </p>
+            <div class="flex justify-center">
+              <a href="#" class="text-primary font-bold flex items-center group">
+                Analyze <i class="fas fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
+              </a>
+            </div>
+            <div class="absolute inset-0 border-2 border-primary/10 rounded-xl pointer-events-none"></div>
+          </div>
+        </div>
+        
+        <!-- Second Row (Right to Left Animation) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Service 4 -->
+          <div class="bg-gradient-to-br from-gray-900 to-secondary p-8 rounded-xl hover:shadow-primary/20 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 service-row-2">
+            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6 mx-auto">
+              <i class="fas fa-users text-2xl text-black"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-center">Sports Community</h3>
+            <p class="text-gray-400 mb-6 text-center">
+              Join active communities, events, and challenges to stay motivated and connected
+            </p>
+            <div class="flex justify-center">
+              <a href="#" class="text-primary font-bold flex items-center group">
+                Connect <i class="fas fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
+              </a>
+            </div>
+            <div class="absolute inset-0 border-2 border-primary/10 rounded-xl pointer-events-none"></div>
+          </div>
+          
+          <!-- Service 5 -->
+          <div class="bg-gradient-to-br from-gray-900 to-secondary p-8 rounded-xl hover:shadow-primary/20 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 service-row-2 delay-100">
+            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6 mx-auto">
+              <i class="fas fa-comment-medical text-2xl text-black"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-center">Expert Consultations</h3>
+            <p class="text-gray-400 mb-6 text-center">
+              Access sports psychologists and physiotherapists for complete mental & physical care
+            </p>
+            <div class="flex flex-wrap justify-center gap-3 mb-6">
+              <span class="bg-gray-800 text-primary text-xs px-3 py-1 rounded-full">Sports Psychology</span>
+              <span class="bg-gray-800 text-primary text-xs px-3 py-1 rounded-full">Injury Prevention</span>
+              <span class="bg-gray-800 text-primary text-xs px-3 py-1 rounded-full">Recovery Plans</span>
+            </div>
+            <div class="flex justify-center">
+              <a href="#" class="text-primary font-bold flex items-center group">
+                Schedule <i class="fas fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
+              </a>
+            </div>
+            <div class="absolute top-4 right-4 h-3 w-3 bg-primary rounded-full animate-ping opacity-75"></div>
+            <div class="absolute inset-0 border-2 border-primary/10 rounded-xl pointer-events-none"></div>
+          </div>
+          
+          <!-- Service 6 -->
+          <div class="bg-gradient-to-br from-gray-900 to-secondary p-8 rounded-xl hover:shadow-primary/20 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 service-row-2 delay-200">
+            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6 mx-auto">
+              <i class="fas fa-video text-2xl text-black"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-center">Virtual Training</h3>
+            <p class="text-gray-400 mb-6 text-center">
+              Live and recorded sessions with top coaches from anywhere in the world
+            </p>
+            <div class="flex justify-center">
+              <a href="#" class="text-primary font-bold flex items-center group">
+                Join Now <i class="fas fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
+              </a>
+            </div>
+            <div class="absolute inset-0 border-2 border-primary/10 rounded-xl pointer-events-none"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Facility Section -->
+    <section id="facility" class="parallax min-h-screen flex items-center" style="background-image: url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1075&q=80');">
+      <div class="absolute inset-0 bg-black opacity-70"></div>
+      <div class="container mx-auto px-6 z-10 py-20">
+        <div class="max-w-2xl">
+          <h2 class="text-4xl font-bold mb-6">WORLD CLASS <span class="gradient-text">FACILITIES</span></h2>
+          <p class="text-gray-300 mb-8 text-lg">Our 20,000 sq ft facility is equipped with the latest fitness equipment, Olympic lifting platforms, sauna, and recovery zones.</p>
+          
+          <div class="grid grid-cols-2 gap-6 mb-8">
+            <div class="flex items-center">
+              <i class="fas fa-check-circle text-primary mr-3 text-xl"></i>
+              <span>State-of-the-art equipment</span>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-check-circle text-primary mr-3 text-xl"></i>
+              <span>24/7 access</span>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-check-circle text-primary mr-3 text-xl"></i>
+              <span>Locker rooms & showers</span>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-check-circle text-primary mr-3 text-xl"></i>
+              <span>Recovery zones</span>
+            </div>
+          </div>
+          
+          <a href="#" class="inline-block bg-primary text-black px-8 py-3 rounded-full font-bold hover:bg-white transition">
+            TOUR OUR FACILITY
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-black to-secondary">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold mb-6">READY TO TRANSFORM <span class="gradient-text">YOUR LIFE?</span></h2>
+        <p class="text-gray-300 max-w-2xl mx-auto mb-8 text-lg">Join Fitnation today and start your journey to a healthier, stronger you with our 7-day free trial.</p>
+        <a href="#contact" class="inline-block bg-primary text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-white transition animate__animated animate__pulse animate__infinite">
+          GET STARTED NOW
+        </a>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-black">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div class="animate__animated animate__fadeInLeft">
+            <h2 class="text-4xl font-bold mb-6">JOIN <span class="gradient-text">FITNATION</span></h2>
+            <p class="text-gray-300 mb-8">Fill out the form to schedule your free consultation and tour of our facilities.</p>
+            
+            <div class="mb-8">
+              <h3 class="text-xl font-bold mb-4">MEMBERSHIP PLANS</h3>
+              <div class="space-y-4">
+                <div class="flex justify-between items-center border-b border-gray-800 pb-2">
+                  <span>Basic Membership</span>
+                  <span class="font-bold">$49/month</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-gray-800 pb-2">
+                  <span>Premium Membership</span>
+                  <span class="font-bold">$79/month</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-gray-800 pb-2">
+                  <span>Personal Training Package</span>
+                  <span class="font-bold">$199/month</span>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <h3 class="text-xl font-bold mb-4">CONTACT INFO</h3>
+              <div class="space-y-3">
+                <div class="flex items-center">
+                  <i class="fas fa-map-marker-alt text-primary mr-3"></i>
+                  <span>123 Fitness Ave, Health City, HC 12345</span>
+                </div>
+                <div class="flex items-center">
+                  <i class="fas fa-phone text-primary mr-3"></i>
+                  <span>(555) 123-4567</span>
+                </div>
+                <div class="flex items-center">
+                  <i class="fas fa-envelope text-primary mr-3"></i>
+                  <span>info@fitnation.com</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="animate__animated animate__fadeInRight">
+            <form class="bg-secondary p-8 rounded-lg">
+              <div class="mb-6">
+                <label class="block text-gray-300 mb-2">Full Name</label>
+                <input type="text" class="w-full bg-gray-800 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary">
+              </div>
+              <div class="mb-6">
+                <label class="block text-gray-300 mb-2">Email</label>
+                <input type="email" class="w-full bg-gray-800 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary">
+              </div>
+              <div class="mb-6">
+                <label class="block text-gray-300 mb-2">Phone</label>
+                <input type="tel" class="w-full bg-gray-800 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary">
+              </div>
+              <div class="mb-6">
+                <label class="block text-gray-300 mb-2">Membership Interest</label>
+                <select class="w-full bg-gray-800 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary">
+                  <option>Select an option</option>
+                  <option>Basic Membership</option>
+                  <option>Premium Membership</option>
+                  <option>Personal Training</option>
+                  <option>Not Sure - Need Guidance</option>
+                </select>
+              </div>
+              <button type="submit" class="w-full bg-primary text-black py-3 rounded-lg font-bold hover:bg-white transition">
+                SUBMIT APPLICATION
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary py-12">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <div class="flex items-center space-x-2 mb-4">
+              <div class="h-10 w-10 rounded-full bg-primary flex items-center justify-center">
+                <span class="font-bold text-black">F</span>
+              </div>
+              <div class="text-white font-bold text-xl">FITNATION</div>
+            </div>
+            <p class="text-gray-400 mb-4">Unleash your inner athlete with our world-class fitness facilities and expert training programs.</p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-primary transition"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="text-gray-400 hover:text-primary transition"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="text-gray-400 hover:text-primary transition"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-gray-400 hover:text-primary transition"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          
+          <div>
+            <h4 class="text-white font-bold mb-4">QUICK LINKS</h4>
+            <ul class="space-y-2">
+              <li><a href="#home" class="text-gray-400 hover:text-primary transition">Home</a></li>
+              <li><a href="#services" class="text-gray-400 hover:text-primary transition">Services</a></li>
+              <li><a href="#facility" class="text-gray-400 hover:text-primary transition">Facility</a></li>
+              <li><a href="#testimonials" class="text-gray-400 hover:text-primary transition">Testimonials</a></li>
+              <li><a href="#contact" class="text-gray-400 hover:text-primary transition">Contact</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-white font-bold mb-4">HOURS</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li class="flex justify-between">
+                <span>Monday - Friday</span>
+                <span>5AM - 11PM</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Saturday</span>
+                <span>7AM - 9PM</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Sunday</span>
+                <span>8AM - 8PM</span>
+              </li>
+              <li class="flex justify-between">
+                <span>24/7 Access</span>
+                <span>Premium Members</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-white font-bold mb-4">NEWSLETTER</h4>
+            <p class="text-gray-400 mb-4">Subscribe to get fitness tips and special offers.</p>
+            <form class="flex">
+              <input type="email" placeholder="Your email" class="bg-gray-800 px-4 py-2 rounded-l-lg focus:outline-none w-full">
+              <button type="submit" class="bg-primary text-black px-4 py-2 rounded-r-lg">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+        
+        <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+          <p>&copy; 2023 Fitnation. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#home" class="fixed bottom-6 right-6 bg-primary text-black w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-white transition z-50">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+
+  <script src="js/main.js"></script>
+  </body>
+  </html>

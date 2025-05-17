@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "PT Sans", sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('bg-1.svg');
+    background-position: center;
+    background-size: cover;
+}
+.container {
+    perspective: 1000px;
+}
+
+.card {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+.flip .card {
+    transform: rotateY(180deg);
+}
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: rgba(255, 255, 255, 0.158);
+    backdrop-filter: blur(10px);
+    border-radius: 10%;
+    box-shadow: 2px 2px 20px rgb(0, 0, 0);
+}
+.back {
+    transform: rotateY(180deg);
+}
+h1 {
+    color: white;
+}
+input {
+    width: 80%;
+    height: 30px;
+    margin: 10px 0;
+    border-radius: 30px;
+    border: none;
+    padding-left: 10px;
+    backdrop-filter: blur(20px);
+}
+.toggle {
+    cursor: pointer;
+    color: white;
+    margin-top: 10px;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    cursor: pointer;
+    width: 30px;
+    transition: transform 0.3s ease;
+}
+
+.search-input {
+    position: absolute;
+    left: 0;
+    width: 0;
+    opacity: 0;
+    padding: 5px;
+    border: none;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 0 2px black;
+    transition: width 0.5s ease, opacity 0.3s ease;
+}
+
+/* Ketika search input aktif */
+.search-container.active .search-input {
+    width: 300px; /* Ubah lebar sesuai navbar */
+    opacity: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+
+.input-btn button:hover {
+    transform: scale(1.07);
+}
+
+.input-btnn button:hover {
+    transform: scale(1.07);
+}
